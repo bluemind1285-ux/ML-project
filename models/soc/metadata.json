@@ -1,0 +1,158 @@
+{
+  "target": "SOC_reference_percent",
+  "target_definition": "100 * (1 - trapz(-Current_measured, Time)/3600 / measured Capacity of the same discharge); segment from record start to first sample < 2.7 V under load; SOC0 = 100 %",
+  "reference_status": "approximate coulomb-counting reference, not measured ground-truth SOC",
+  "reference_defensible": true,
+  "reference_checks": {
+    "segments_total": 636,
+    "segments_accepted": 636,
+    "segments_rejected": 0,
+    "reject_reasons": {},
+    "start_voltage_min_V": 4.157544974448367,
+    "max_time_step_s": 20.5,
+    "mean_load_current_A_range": [
+      1.988907897110452,
+      2.0131710359136457
+    ],
+    "q_to_cutoff_over_capacity_min": 0.9937811135461562,
+    "q_to_cutoff_over_capacity_median": 0.9962783143736373,
+    "q_to_cutoff_over_capacity_max": 0.9971765847345828,
+    "soc_end_unclipped_min_percent": 0.2823415265417295,
+    "soc_end_unclipped_max_percent": 0.621888645384383,
+    "soc_max_unclipped_percent": 100.00214203858008,
+    "soc_largest_step_increase_percent": 0.0021420385800894,
+    "q_full_record_over_capacity_max": 1.0172202682234357,
+    "capacity_tolerance": 0.02,
+    "segments_outside_tolerance": 0
+  },
+  "reference_assumptions": [
+    "Current_measured < 0 while discharging; discharge current = -Current_measured",
+    "Discharge records start right after a CC-CV charge to 4.2 V / 20 mA; start voltage >= 4.1 V accepted as SOC0 = 100 %",
+    "Usable capacity = measured Capacity field of the same discharge (cycle-specific, known only after the discharge)",
+    "Segment truncated at the 2.7 V cutoff (README definition of Capacity); deeper cutoffs not modelled",
+    "Validity limited to the dataset protocol: 2 A constant-current discharge, 24 degC ambient"
+  ],
+  "unit": "SOC percentage points",
+  "model_name": "RandomForest",
+  "feature_order": [
+    "voltage_measured_V",
+    "elapsed_s",
+    "temp_rise_C",
+    "voltage_drop_V",
+    "dvdt_past_V_per_s"
+  ],
+  "selected_features": [
+    "voltage_measured_V",
+    "elapsed_s",
+    "temp_rise_C",
+    "voltage_drop_V",
+    "dvdt_past_V_per_s"
+  ],
+  "candidate_features": [
+    "voltage_measured_V",
+    "discharge_current_A",
+    "temperature_measured_C",
+    "voltage_load_V",
+    "elapsed_s",
+    "temp_rise_C",
+    "voltage_drop_V",
+    "dvdt_past_V_per_s"
+  ],
+  "dropped_before_rfecv": {},
+  "training_feature_ranges": {
+    "voltage_measured_V": {
+      "min": 2.7000843127834777,
+      "max": 4.2333254357000865
+    },
+    "elapsed_s": {
+      "min": 0.0,
+      "max": 3649.375
+    },
+    "temp_rise_C": {
+      "min": -0.02538207533264014,
+      "max": 17.012529876505273
+    },
+    "voltage_drop_V": {
+      "min": -0.0019090111886965744,
+      "max": 1.502673106211684
+    },
+    "dvdt_past_V_per_s": {
+      "min": -0.013565269089891972,
+      "max": 0.00020328092734496586
+    }
+  },
+  "split": {
+    "type": "battery holdout (whole discharge segments)",
+    "train_batteries": [
+      "B0005",
+      "B0006",
+      "B0007"
+    ],
+    "test_batteries": [
+      "B0018"
+    ],
+    "train_samples": 137406,
+    "test_samples": 31921,
+    "train_segments": 504,
+    "test_segments": 132,
+    "samples_excluded_nonfinite": 0
+  },
+  "cv": "LeaveOneGroupOut over training batteries (used for RFECV and model choice)",
+  "rfecv": {
+    "estimator": "RandomForestRegressor(n_estimators=40, max_depth=14, min_samples_leaf=20)",
+    "scoring": "neg MAE"
+  },
+  "selection_rule": "lowest mean grouped-CV MAE",
+  "cv_metrics": {
+    "LinearRegression": {
+      "MAE": 2.2506145963154296,
+      "RMSE": 2.8544149596779427,
+      "R2": 0.9902119351449398
+    },
+    "DecisionTree": {
+      "MAE": 1.214207415247275,
+      "RMSE": 1.6677337094413753,
+      "R2": 0.9965670630200142
+    },
+    "RandomForest": {
+      "MAE": 0.8422687623963775,
+      "RMSE": 1.1636611098292988,
+      "R2": 0.9982257765418523
+    }
+  },
+  "test_metrics": {
+    "LinearRegression": {
+      "n": 31921,
+      "MAE": 3.8080761208488,
+      "RMSE": 4.481853037093075,
+      "R2": 0.976151812671386
+    },
+    "DecisionTree": {
+      "n": 31921,
+      "MAE": 2.2434702146666656,
+      "RMSE": 3.1415355653793124,
+      "R2": 0.9882827927228695
+    },
+    "RandomForest": {
+      "n": 31921,
+      "MAE": 1.7434094188539975,
+      "RMSE": 2.2862474680772227,
+      "R2": 0.9937943593080621
+    }
+  },
+  "random_state": 42,
+  "input_files": [
+    "B0005.mat",
+    "B0006.mat",
+    "B0007.mat",
+    "B0018.mat"
+  ],
+  "library_versions": {
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}

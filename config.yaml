@@ -1,0 +1,42 @@
+# Paths are relative to the project root.
+paths:
+  raw_dir: data/raw                      # original .mat files are copied here byte-for-byte
+  source_dirs:                           # where to look for the supplied files if not yet in raw_dir
+    - "1. BatteryAgingARC-FY08Q4"
+    - "."
+  processed_dir: data/processed
+  models_dir: models
+  results_dir: results
+
+expected_batteries: [B0005, B0006, B0007, B0018]
+documentation_files: [README.txt]
+
+# Supplied README: "30% fade in rated capacity (from 2Ahr to 1.4Ahr)".
+rated_capacity_Ah: 2.0
+eol_capacity_Ah: 1.4                     # README end-of-life criterion; plotted for context only
+
+random_state: 42
+
+soh:
+  # Battery held out for the final test, fixed before training. B0018 was chosen because
+  # it was run as a separate experiment (different operation interleaving) and its
+  # capacity range lies inside the training batteries' range, so the test checks
+  # cross-battery generalisation rather than extrapolation below the training range.
+  test_battery: B0018
+  early_window_s: 600                    # discharge features use only the first 600 s
+  min_charge_samples: 50                 # charge records shorter than this are treated as truncated
+  max_plausible_voltage_V: 4.5           # README: CV charge at 4.2 V; readings above this mark the charge record suspect
+
+soc:
+  test_battery: B0018
+  cutoff_voltage_V: 2.7                  # README: Capacity is "for discharge till 2.7V"
+  load_on_current_A: 0.5                 # |current| above this means the 2 A load is connected
+  full_charge_min_voltage_V: 4.1         # segment start voltage needed to accept SOC0 = 100 %
+  max_gap_s: 60                          # split/reject a segment if a time step exceeds this
+  slope_window_samples: 3                # past-only window for dV/dt
+  reference_capacity_tolerance: 0.02     # integrated Ah to cutoff must be within ±2 % of Capacity
+  # Set to true only after reviewing results/soc_assessment.md. The dashboard also requires
+  # the saved SOC metadata to mark the reference as defensible.
+  # Reviewed 2026-10-15: reference checks passed and held-out B0018 errors are reported in
+  # results/soc_assessment.md; enabled with the scope caveats stated there.
+  dashboard_enabled: true

@@ -1,0 +1,16 @@
+feature,rfecv_rank,selected
+chg_cc_duration_s,1,True
+chg_v_start_V,1,True
+dis_temp_rise_600s_C,1,True
+dis_v_300s_V,1,True
+dis_v_600s_V,1,True
+dis_v_60s_V,1,True
+dis_vdrop_60_600s_V,1,True
+discharge_number,1,True
+chg_temp_rise_C,2,False
+chg_temp_max_C,3,False
+dis_temp_start_C,4,False
+chg_cv_duration_s,5,False
+dis_v_start_V,6,False
+imp_Re_ohm,7,False
+imp_Rct_ohm,8,False

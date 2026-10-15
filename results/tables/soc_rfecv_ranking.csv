@@ -1,0 +1,9 @@
+feature,rfecv_rank,selected
+dvdt_past_V_per_s,1,True
+elapsed_s,1,True
+temp_rise_C,1,True
+voltage_drop_V,1,True
+voltage_measured_V,1,True
+voltage_load_V,2,False
+temperature_measured_C,3,False
+discharge_current_A,4,False

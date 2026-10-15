@@ -1,0 +1,9 @@
+selected_feature
+discharge_number
+chg_cc_duration_s
+chg_v_start_V
+dis_v_60s_V
+dis_v_300s_V
+dis_v_600s_V
+dis_vdrop_60_600s_V
+dis_temp_rise_600s_C

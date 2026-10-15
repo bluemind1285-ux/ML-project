@@ -1,0 +1,6 @@
+selected_feature
+voltage_measured_V
+elapsed_s
+temp_rise_C
+voltage_drop_V
+dvdt_past_V_per_s

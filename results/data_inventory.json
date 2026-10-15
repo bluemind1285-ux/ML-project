@@ -1,0 +1,583 @@
+{
+  "raw_dir": "D:\\ML project\\data\\raw",
+  "found": [
+    "B0005",
+    "B0006",
+    "B0007",
+    "B0018"
+  ],
+  "missing": [],
+  "batteries": {
+    "B0005": {
+      "file": "B0005.mat",
+      "sha256": "0eae4585baf3f200c09fe24c5ab884f1889679fc75206ca1aa19da704104f0b0",
+      "bytes": 15956874,
+      "records": 616,
+      "operation_counts": {
+        "charge": 170,
+        "discharge": 168,
+        "impedance": 278
+      },
+      "fields_by_operation": {
+        "charge": {
+          "Voltage_measured": {
+            "records_with_field": 170,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 170,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 170,
+            "unit": "degC"
+          },
+          "Current_charge": {
+            "records_with_field": 170,
+            "unit": "A"
+          },
+          "Voltage_charge": {
+            "records_with_field": 170,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 170,
+            "unit": "s"
+          }
+        },
+        "discharge": {
+          "Voltage_measured": {
+            "records_with_field": 168,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 168,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 168,
+            "unit": "degC"
+          },
+          "Current_load": {
+            "records_with_field": 168,
+            "unit": "A"
+          },
+          "Voltage_load": {
+            "records_with_field": 168,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 168,
+            "unit": "s"
+          },
+          "Capacity": {
+            "records_with_field": 168,
+            "unit": "Ah"
+          }
+        },
+        "impedance": {
+          "Re": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Rct": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Sense_current": {
+            "records_with_field": 278,
+            "unit": "A"
+          },
+          "Battery_current": {
+            "records_with_field": 278,
+            "unit": "A"
+          },
+          "Current_ratio": {
+            "records_with_field": 278,
+            "unit": "-"
+          },
+          "Battery_impedance": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Rectified_Impedance": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          }
+        }
+      },
+      "ambient_temperature_C": [
+        24.0
+      ],
+      "first_record_start": "2008-04-02 13:08:17.921000",
+      "last_record_start": "2008-05-28 11:09:42.046000",
+      "samples_per_record": {
+        "charge": [
+          5,
+          3738,
+          3900
+        ],
+        "discharge": [
+          179,
+          314,
+          371
+        ]
+      },
+      "charge_records_below_50_samples": 1,
+      "discharge_capacity_Ah_min_max": [
+        1.2874525221379407,
+        1.8564874208181574
+      ],
+      "discharge_capacity_missing": 0,
+      "discharge_median_current_measured_A": -2.012308837371185,
+      "discharge_current_load_sign_by_record": {
+        "negative": 31,
+        "positive": 137
+      },
+      "discharge_start_voltage_min_V": 4.184534803011309,
+      "discharge_min_voltage_range_V": [
+        2.4556793246645583,
+        2.699983457940659
+      ],
+      "Re_ohm_min_max": [
+        0.043558785775475374,
+        0.06351594916063175
+      ],
+      "Rct_ohm_min_max": [
+        0.06488297170955903,
+        0.08975687046479841
+      ],
+      "parser_warnings": []
+    },
+    "B0006": {
+      "file": "B0006.mat",
+      "sha256": "fa818ab4db5db8ab21e910b6dd6c3e20d3761bb9672089e1a4de8f96074616c5",
+      "bytes": 16028159,
+      "records": 616,
+      "operation_counts": {
+        "charge": 170,
+        "discharge": 168,
+        "impedance": 278
+      },
+      "fields_by_operation": {
+        "charge": {
+          "Voltage_measured": {
+            "records_with_field": 170,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 170,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 170,
+            "unit": "degC"
+          },
+          "Current_charge": {
+            "records_with_field": 170,
+            "unit": "A"
+          },
+          "Voltage_charge": {
+            "records_with_field": 170,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 170,
+            "unit": "s"
+          }
+        },
+        "discharge": {
+          "Voltage_measured": {
+            "records_with_field": 168,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 168,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 168,
+            "unit": "degC"
+          },
+          "Current_load": {
+            "records_with_field": 168,
+            "unit": "A"
+          },
+          "Voltage_load": {
+            "records_with_field": 168,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 168,
+            "unit": "s"
+          },
+          "Capacity": {
+            "records_with_field": 168,
+            "unit": "Ah"
+          }
+        },
+        "impedance": {
+          "Re": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Rct": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Sense_current": {
+            "records_with_field": 278,
+            "unit": "A"
+          },
+          "Battery_current": {
+            "records_with_field": 278,
+            "unit": "A"
+          },
+          "Current_ratio": {
+            "records_with_field": 278,
+            "unit": "-"
+          },
+          "Battery_impedance": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Rectified_Impedance": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          }
+        }
+      },
+      "ambient_temperature_C": [
+        24.0
+      ],
+      "first_record_start": "2008-04-02 13:08:17.921000",
+      "last_record_start": "2008-05-28 11:09:42.046000",
+      "samples_per_record": {
+        "charge": [
+          5,
+          3738,
+          3900
+        ],
+        "discharge": [
+          179,
+          314,
+          371
+        ]
+      },
+      "charge_records_below_50_samples": 1,
+      "discharge_capacity_Ah_min_max": [
+        1.15381833159625,
+        2.035337591005598
+      ],
+      "discharge_capacity_missing": 0,
+      "discharge_median_current_measured_A": -2.010058619307167,
+      "discharge_current_load_sign_by_record": {
+        "negative": 31,
+        "positive": 137
+      },
+      "discharge_start_voltage_min_V": 4.157544974448367,
+      "discharge_min_voltage_range_V": [
+        2.1206980945954057,
+        2.4999079970509284
+      ],
+      "Re_ohm_min_max": [
+        0.05913130853407464,
+        0.07914099539982122
+      ],
+      "Rct_ohm_min_max": [
+        0.07795570757873038,
+        0.10668360253694291
+      ],
+      "parser_warnings": []
+    },
+    "B0007": {
+      "file": "B0007.mat",
+      "sha256": "d022afa086efaf54ab5b63f05220f5be178c8027e2fa8d68589db0e85a441a3b",
+      "bytes": 16049460,
+      "records": 616,
+      "operation_counts": {
+        "charge": 170,
+        "discharge": 168,
+        "impedance": 278
+      },
+      "fields_by_operation": {
+        "charge": {
+          "Voltage_measured": {
+            "records_with_field": 170,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 170,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 170,
+            "unit": "degC"
+          },
+          "Current_charge": {
+            "records_with_field": 170,
+            "unit": "A"
+          },
+          "Voltage_charge": {
+            "records_with_field": 170,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 170,
+            "unit": "s"
+          }
+        },
+        "discharge": {
+          "Voltage_measured": {
+            "records_with_field": 168,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 168,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 168,
+            "unit": "degC"
+          },
+          "Current_load": {
+            "records_with_field": 168,
+            "unit": "A"
+          },
+          "Voltage_load": {
+            "records_with_field": 168,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 168,
+            "unit": "s"
+          },
+          "Capacity": {
+            "records_with_field": 168,
+            "unit": "Ah"
+          }
+        },
+        "impedance": {
+          "Re": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Rct": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Sense_current": {
+            "records_with_field": 278,
+            "unit": "A"
+          },
+          "Battery_current": {
+            "records_with_field": 278,
+            "unit": "A"
+          },
+          "Current_ratio": {
+            "records_with_field": 278,
+            "unit": "-"
+          },
+          "Battery_impedance": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          },
+          "Rectified_Impedance": {
+            "records_with_field": 278,
+            "unit": "ohm"
+          }
+        }
+      },
+      "ambient_temperature_C": [
+        24.0
+      ],
+      "first_record_start": "2008-04-02 13:08:17.921000",
+      "last_record_start": "2008-05-28 11:09:42.046000",
+      "samples_per_record": {
+        "charge": [
+          5,
+          3738,
+          3900
+        ],
+        "discharge": [
+          179,
+          314,
+          371
+        ]
+      },
+      "charge_records_below_50_samples": 1,
+      "discharge_capacity_Ah_min_max": [
+        1.4004552399066514,
+        1.89105229539079
+      ],
+      "discharge_capacity_missing": 0,
+      "discharge_median_current_measured_A": -1.9894048037619108,
+      "discharge_current_load_sign_by_record": {
+        "negative": 31,
+        "positive": 137
+      },
+      "discharge_start_voltage_min_V": 4.188842911449222,
+      "discharge_min_voltage_range_V": [
+        1.7370300333706354,
+        2.199196544880164
+      ],
+      "Re_ohm_min_max": [
+        0.03591968009886427,
+        0.06729379539953537
+      ],
+      "Rct_ohm_min_max": [
+        0.060073134186248135,
+        0.09357177480301318
+      ],
+      "parser_warnings": []
+    },
+    "B0018": {
+      "file": "B0018.mat",
+      "sha256": "d1e6c923a43ea1c9666b3a90bbb521757a067fd60b4d17dbfaa49c50b179da69",
+      "bytes": 8502218,
+      "records": 319,
+      "operation_counts": {
+        "charge": 134,
+        "impedance": 53,
+        "discharge": 132
+      },
+      "fields_by_operation": {
+        "charge": {
+          "Voltage_measured": {
+            "records_with_field": 134,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 134,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 134,
+            "unit": "degC"
+          },
+          "Current_charge": {
+            "records_with_field": 134,
+            "unit": "A"
+          },
+          "Voltage_charge": {
+            "records_with_field": 134,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 134,
+            "unit": "s"
+          }
+        },
+        "impedance": {
+          "Re": {
+            "records_with_field": 53,
+            "unit": "ohm"
+          },
+          "Rct": {
+            "records_with_field": 53,
+            "unit": "ohm"
+          },
+          "Sense_current": {
+            "records_with_field": 53,
+            "unit": "A"
+          },
+          "Battery_current": {
+            "records_with_field": 53,
+            "unit": "A"
+          },
+          "Current_ratio": {
+            "records_with_field": 53,
+            "unit": "-"
+          },
+          "Battery_impedance": {
+            "records_with_field": 53,
+            "unit": "ohm"
+          },
+          "Rectified_Impedance": {
+            "records_with_field": 53,
+            "unit": "ohm"
+          }
+        },
+        "discharge": {
+          "Voltage_measured": {
+            "records_with_field": 132,
+            "unit": "V"
+          },
+          "Current_measured": {
+            "records_with_field": 132,
+            "unit": "A"
+          },
+          "Temperature_measured": {
+            "records_with_field": 132,
+            "unit": "degC"
+          },
+          "Current_load": {
+            "records_with_field": 132,
+            "unit": "A"
+          },
+          "Voltage_load": {
+            "records_with_field": 132,
+            "unit": "V"
+          },
+          "Time": {
+            "records_with_field": 132,
+            "unit": "s"
+          },
+          "Capacity": {
+            "records_with_field": 132,
+            "unit": "Ah"
+          }
+        }
+      },
+      "ambient_temperature_C": [
+        24.0
+      ],
+      "first_record_start": "2008-07-07 12:26:45.750000",
+      "last_record_start": "2008-08-20 08:37:19.515000",
+      "samples_per_record": {
+        "charge": [
+          381,
+          1966,
+          3777
+        ],
+        "discharge": [
+          200,
+          258,
+          366
+        ]
+      },
+      "charge_records_below_50_samples": 0,
+      "discharge_capacity_Ah_min_max": [
+        1.341051440640485,
+        1.8550045207910817
+      ],
+      "discharge_capacity_missing": 0,
+      "discharge_median_current_measured_A": -2.0082922558324823,
+      "discharge_current_load_sign_by_record": {
+        "positive": 132
+      },
+      "discharge_start_voltage_min_V": 4.181406543107895,
+      "discharge_min_voltage_range_V": [
+        2.2786338886500292,
+        2.4985039496028567
+      ],
+      "Re_ohm_min_max": [
+        0.05911226141914418,
+        0.06606850271516486
+      ],
+      "Rct_ohm_min_max": [
+        0.08381129726407618,
+        0.10229511275627602
+      ],
+      "parser_warnings": [
+        "B0018 record 114 (charge): nonfinite_Voltage_measured, nonfinite_Current_measured, nonfinite_Temperature_measured"
+      ]
+    }
+  },
+  "presentation_files": [
+    "[24BEE0104],[24BEE0027].pptx"
+  ],
+  "documentation_present": [
+    "README.txt"
+  ]
+}

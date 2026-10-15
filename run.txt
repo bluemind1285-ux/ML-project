@@ -1,0 +1,6 @@
+python scripts/inspect_data.py
+python scripts/prepare_data.py
+python scripts/train_soh.py
+python scripts/train_soc.py
+python scripts/make_report.py
+streamlit run dashboard.py

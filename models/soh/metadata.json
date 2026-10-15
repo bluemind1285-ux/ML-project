@@ -1,0 +1,165 @@
+{
+  "target": "SOH_percent",
+  "target_definition": "100 * measured discharge Capacity (Ah) / 2.0 Ah rated capacity (supplied README)",
+  "unit": "SOH percentage points",
+  "model_name": "RandomForest",
+  "feature_order": [
+    "discharge_number",
+    "chg_cc_duration_s",
+    "chg_v_start_V",
+    "dis_v_60s_V",
+    "dis_v_300s_V",
+    "dis_v_600s_V",
+    "dis_vdrop_60_600s_V",
+    "dis_temp_rise_600s_C"
+  ],
+  "selected_features": [
+    "discharge_number",
+    "chg_cc_duration_s",
+    "chg_v_start_V",
+    "dis_v_60s_V",
+    "dis_v_300s_V",
+    "dis_v_600s_V",
+    "dis_vdrop_60_600s_V",
+    "dis_temp_rise_600s_C"
+  ],
+  "candidate_features": [
+    "discharge_number",
+    "chg_cc_duration_s",
+    "chg_cv_duration_s",
+    "chg_v_start_V",
+    "chg_temp_max_C",
+    "chg_temp_rise_C",
+    "imp_Re_ohm",
+    "imp_Rct_ohm",
+    "dis_v_start_V",
+    "dis_v_60s_V",
+    "dis_v_300s_V",
+    "dis_v_600s_V",
+    "dis_vdrop_60_600s_V",
+    "dis_temp_start_C",
+    "dis_temp_rise_600s_C"
+  ],
+  "dropped_before_rfecv": {},
+  "training_feature_ranges": {
+    "discharge_number": {
+      "min": 1.0,
+      "max": 168.0
+    },
+    "chg_cc_duration_s": {
+      "min": 828.969,
+      "max": 3821.875
+    },
+    "chg_v_start_V": {
+      "min": 3.1500006553542867,
+      "max": 3.873017221300996
+    },
+    "dis_v_60s_V": {
+      "min": 3.8152335614408472,
+      "max": 3.9802127282104895
+    },
+    "dis_v_300s_V": {
+      "min": 3.6247831030858766,
+      "max": 3.8669901274743377
+    },
+    "dis_v_600s_V": {
+      "min": 3.4861778352521973,
+      "max": 3.7803364068301417
+    },
+    "dis_vdrop_60_600s_V": {
+      "min": 0.1776346940290167,
+      "max": 0.3359519239830617
+    },
+    "dis_temp_rise_600s_C": {
+      "min": 4.205372936741497,
+      "max": 5.839141666840074
+    }
+  },
+  "split": {
+    "type": "battery holdout",
+    "train_batteries": [
+      "B0005",
+      "B0006",
+      "B0007"
+    ],
+    "test_batteries": [
+      "B0018"
+    ],
+    "train_rows": 504,
+    "test_rows": 132,
+    "train_cycles": {
+      "B0005": [
+        1,
+        168
+      ],
+      "B0006": [
+        1,
+        168
+      ],
+      "B0007": [
+        1,
+        168
+      ]
+    },
+    "rows_excluded_nonfinite_target": 0
+  },
+  "cv": "LeaveOneGroupOut over training batteries (used for RFECV and model choice)",
+  "rfecv": {
+    "estimator": "RandomForestRegressor(n_estimators=200, min_samples_leaf=2)",
+    "scoring": "neg MAE",
+    "step": 1
+  },
+  "selection_rule": "lowest mean grouped-CV MAE",
+  "cv_metrics": {
+    "LinearRegression": {
+      "MAE": 4.0021025634872665,
+      "RMSE": 4.620104081583036,
+      "R2": 0.7762902188956314
+    },
+    "DecisionTree": {
+      "MAE": 2.8459487344037853,
+      "RMSE": 3.350744275382666,
+      "R2": 0.8910464306530912
+    },
+    "RandomForest": {
+      "MAE": 2.6236852331096685,
+      "RMSE": 3.0319186551485715,
+      "R2": 0.9110483024959048
+    }
+  },
+  "test_metrics": {
+    "LinearRegression": {
+      "n": 132,
+      "MAE": 4.741631184224369,
+      "RMSE": 4.927973851636354,
+      "R2": 0.5919786605020646
+    },
+    "DecisionTree": {
+      "n": 132,
+      "MAE": 2.326526536372355,
+      "RMSE": 2.865953188499836,
+      "R2": 0.8619983519860708
+    },
+    "RandomForest": {
+      "n": 132,
+      "MAE": 2.3034076163481125,
+      "RMSE": 2.6596989171241376,
+      "R2": 0.8811467557881071
+    }
+  },
+  "random_state": 42,
+  "input_files": [
+    "B0005.mat",
+    "B0006.mat",
+    "B0007.mat",
+    "B0018.mat"
+  ],
+  "library_versions": {
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}
